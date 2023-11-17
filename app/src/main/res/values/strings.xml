@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Universidad</string>
+    <string name="registro_estudiante">Registro Estudiante</string>
+    <string name="nombre">Nombre</string>
+    <string name="primer_apellido">Primer Apellido</string>
+    <string name="segundo_apellido">Segundo Apellido</string>
+    <string name="correo_electronico">Correo electronico</string>
+    <string name="telefono">Telefono</string>
+    <string name="guardar">Guardar</string>
+    <string name="buscar">buscar</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffec4"
+    tools:context=".Asignaturas">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="109dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Registro de Asignatura"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Codigo: "
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topMargin" />
+
+    <TextView
+        android:id="@+id/viewCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/codigo"
+        app:layout_constraintStart_toEndOf="@id/codigo"
+        tools:text="123" />
+
+    <TextView
+        android:id="@+id/asignatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Asignatura:"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@id/codigo"
+        app:layout_constraintTop_toBottomOf="@id/codigo" />
+
+    <EditText
+        android:id="@+id/viewAsignatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/black"
+        android:cursorVisible="true"
+        android:minWidth="150dp"
+        android:inputType=""
+        android:textColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/asignatura"
+        app:layout_constraintStart_toEndOf="@id/asignatura" />
+
+    <Button
+        android:id="@+id/btnGuardarAsig"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/salvar"
+        app:layout_constraintEnd_toStartOf="@id/btnModificarAsig"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycler"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnModificarAsig"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/editar"
+        app:layout_constraintEnd_toStartOf="@id/btnEliminarAsig"
+        app:layout_constraintStart_toEndOf="@id/btnGuardarAsig"
+        app:layout_constraintTop_toTopOf="@id/btnGuardarAsig" />
+
+    <Button
+        android:id="@+id/btnEliminarAsig"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnModificarAsig"
+        app:layout_constraintTop_toTopOf="@id/btnGuardarAsig" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="340dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/topBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerAsignatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                tools:listitem="@layout/activity_list_asignatura" />
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnGoBackSubRegAsigna"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
